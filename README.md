@@ -7,11 +7,11 @@ API Endpointy
 - Metoda: POST
 - Formát požadavku: JSON
 Příklad požadavku (json):
-{
-    "title":"nazev",
-    "content":"obsah",
-    "author_id":"id cislo autora"
-}
+{__
+    "title":"nazev",__
+    "content":"obsah",__
+    "author_id":"id cislo autora"__
+}__
 Odpověď (json):
 {
     "message": "Blog post created successfully"
