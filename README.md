@@ -71,7 +71,8 @@ Odpověď (json):<br />
 }<br />
 
 ## Autentizace
-Aplikace vyžaduje autentizaci pro přístup k některým endpointům. Přidejte hlavičku Authorization s platným JWT tokenem k požadavkům.
+Aplikace vyžaduje autentizaci pro přístup k některým endpointům. Přidejte hlavičku Authorization s platným JWT tokenem k požadavkům.<br />
+"AUTH_TOKEN=huh"
 
 ## Licence
 Tato aplikace je poskytována pod licencí MIT License.
