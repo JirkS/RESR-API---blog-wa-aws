@@ -1,97 +1,77 @@
-# REST-API---blog-wa-aws
+# REST-API - blog wa aws
 
 API Endpointy
-1. Vytvoření nového blog příspěvku
-URL: /api/blog
 
-Metoda: POST
-
-Formát požadavku: JSON
-
-Příklad požadavku:
-
-json
-Copy code
+### 1. Vytvoření nového blog příspěvku
+- URL: /api/blog
+- Metoda: POST
+- Formát požadavku: JSON
+Příklad požadavku (json):
 {
-  "content": "Obsah blog příspěvku",
-  "createdAt": "2023-11-26T12:00:00",
-  "author": "Jmeno Autora"
+    "title":"nazev",
+    "content":"obsah",
+    "author_id":"id cislo autora"
 }
-Odpověď:
-
-json
-Copy code
+Odpověď (json):
 {
-  "id": "unikátní-identifikátor"
+    "message": "Blog post created successfully"
 }
-2. Zobrazení všech blog příspěvků
-URL: /api/blog
 
-Metoda: GET
-
-Odpověď:
-
-json
-Copy code
-[
-  {
-    "id": "unikátní-identifikátor-1",
-    "content": "Obsah blog příspěvku 1",
-    "createdAt": "2023-11-26T12:00:00",
-    "author": "Jmeno Autora 1"
-  },
-  {
-    "id": "unikátní-identifikátor-2",
-    "content": "Obsah blog příspěvku 2",
-    "createdAt": "2023-11-27T14:30:00",
-    "author": "Jmeno Autora 2"
-  }
-]
-3. Zobrazení konkrétního blog příspěvku
-URL: /api/blog/:blogId
-
-Metoda: GET
-
-Odpověď:
-
-json
-Copy code
+### 2. Zobrazení všech blog příspěvků
+- URL: /api/blog
+- Metoda: GET
+Odpověď (json):
 {
-  "id": "unikátní-identifikátor",
-  "content": "Obsah blog příspěvku",
-  "createdAt": "2023-11-26T12:00:00",
-  "author": "Jmeno Autora"
+    "post_id": "id",
+    "title": "nazev",
+    "content": "obsah",
+    "creation_date": "datum vytvoreni"
+    "author_id": "id autora"
+},
+{
+    "post_id": "id",
+    "title": "nazev",
+    "content": "obsah",
+    "creation_date": "datum vytvoreni"
+    "author_id": "id autora"
 }
-4. Smazání konkrétního blog příspěvku
-URL: /api/blog/:blogId
-Metoda: DELETE
-Odpověď: 204 No Content
-5. Částečná aktualizace konkrétního blog příspěvku
-URL: /api/blog/:blogId
+  
+### 3. Zobrazení konkrétního blog příspěvku
+- URL: /api/blog/blogId
+- Metoda: GET
+Odpověď (json):
+{
+    "post_id": "id",
+    "title": "nazev",
+    "content": "obsah",
+    "creation_date": "datum vytvoreni"
+    "author_id": "id autora"
+}
 
-Metoda: PATCH
+### 4. Smazání konkrétního blog příspěvku
+- URL: /api/blog/:blogId
+- Metoda: DELETE
+Odpověď (json): 
+{
+    "message": "Blog post deleted successfully"
+}
 
-Formát požadavku: JSON
+### 5. Částečná aktualizace konkrétního blog příspěvku
+- URL: /api/blog/blogId
+- Metoda: PATCH
+- Formát požadavku: JSON
 
-Příklad požadavku:
-
-json
-Copy code
+Příklad požadavku (json):
 {
   "content": "Nový obsah blog příspěvku"
 }
-Odpověď:
-
-json
-Copy code
+Odpověď (json):
 {
-  "id": "unikátní-identifikátor",
-  "content": "Nový obsah blog příspěvku",
-  "createdAt": "2023-11-26T12:00:00",
-  "author": "Jmeno Autora"
+    "message": "Blog post updated successfully"
 }
-Autentizace
+
+## Autentizace
 Aplikace vyžaduje autentizaci pro přístup k některým endpointům. Přidejte hlavičku Authorization s platným JWT tokenem k požadavkům.
 
-Licence
+## Licence
 Tato aplikace je poskytována pod licencí MIT License.
