@@ -1,6 +1,6 @@
 # REST-API - blog wa aws
 
-adresa: http://16.16.68.180:5000/
+adresa: http://16.16.68.180:5000/<br />
 API Endpointy
 
 ### 1. Vytvoření nového blog příspěvku
