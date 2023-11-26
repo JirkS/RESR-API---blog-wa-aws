@@ -6,69 +6,68 @@ API Endpointy
 - URL: /api/blog
 - Metoda: POST
 - Formát požadavku: JSON
-Příklad požadavku (json):
+Příklad požadavku (json):<br />
 {<br />
     "title":"nazev",<br />
-    "content":"obsah",__
-    "author_id":"id cislo autora"__
-}__
-Odpověď (json):
-{
-    "message": "Blog post created successfully"
-}
+    "content":"obsah",<br />
+    "author_id":"id cislo autora"<br />
+}<br />
+Odpověď (json):<br />
+{<br />
+    "message": "Blog post created successfully"<br />
+}<br />
 
 ### 2. Zobrazení všech blog příspěvků
 - URL: /api/blog
 - Metoda: GET
-Odpověď (json):
-{
-    "post_id": "id",
-    "title": "nazev",
-    "content": "obsah",
-    "creation_date": "datum vytvoreni"
-    "author_id": "id autora"
-},
-{
-    "post_id": "id",
-    "title": "nazev",
-    "content": "obsah",
-    "creation_date": "datum vytvoreni"
-    "author_id": "id autora"
-}
+Odpověď (json):<br />
+{<br />
+    "post_id": "id",<br />
+    "title": "nazev",<br />
+    "content": "obsah",<br />
+    "creation_date": "datum vytvoreni"<br />
+    "author_id": "id autora"<br />
+},<br />
+{<br />
+    "post_id": "id",<br />
+    "title": "nazev",<br />
+    "content": "obsah",<br />
+    "creation_date": "datum vytvoreni"<br />
+    "author_id": "id autora"<br />
+}<br />
   
 ### 3. Zobrazení konkrétního blog příspěvku
 - URL: /api/blog/blogId
 - Metoda: GET
-Odpověď (json):
-{
-    "post_id": "id",
-    "title": "nazev",
-    "content": "obsah",
-    "creation_date": "datum vytvoreni"
-    "author_id": "id autora"
-}
+Odpověď (json):<br />
+{<br />
+    "post_id": "id",<br />
+    "title": "nazev",<br />
+    "content": "obsah",<br />
+    "creation_date": "datum vytvoreni"<br />
+    "author_id": "id autora"<br />
+}<br />
 
 ### 4. Smazání konkrétního blog příspěvku
 - URL: /api/blog/:blogId
 - Metoda: DELETE
-Odpověď (json): 
-{
-    "message": "Blog post deleted successfully"
-}
+Odpověď (json): <br />
+{<br />
+    "message": "Blog post deleted successfully"<br />
+}<br />
 
 ### 5. Částečná aktualizace konkrétního blog příspěvku
 - URL: /api/blog/blogId
 - Metoda: PATCH
 - Formát požadavku: JSON
-
-Příklad požadavku (json):
-{
-  "content": "Nový obsah blog příspěvku"
-}
-Odpověď (json):
-{
-    "message": "Blog post updated successfully"
-}
+Příklad požadavku (json):<br />
+{<br />
+  "content": "Nový obsah blog příspěvku"<br />
+}<br />
+Odpověď (json):<br />
+{<br />
+    "message": "Blog post updated successfully"<br />
+}<br />
 
 ## Autentizace
 Aplikace vyžaduje autentizaci pro přístup k některým endpointům. Přidejte hlavičku Authorization s platným JWT tokenem k požadavkům.
