@@ -1,7 +1,6 @@
 from flask import Flask, request, jsonify, render_template
 from flask_mysqldb import MySQL
 from dotenv import load_dotenv
-from functools import wraps
 import os
 
 app = Flask(__name__)
@@ -50,16 +49,12 @@ def login():
 def signup():
     return render_template('register.html')
 
-
 @app.route('/api/blog', methods=['POST'])
 def create_blog_post():
     if not is_authorized(request.headers.get('Authorization')):
         return jsonify({"error": "Not authorized"}), 403
     data = request.json
-    title = data['title']
-    content = data['content']
-    author_id = data['author_id']
-
+    title = data['title']                                                                                             [ Read 135 lines (Conv^G Hcontent = data['content']     ^W Where Is      ^K Cut           ^T Execute       ^C Location      M-U Undo         M-A Set Mark     M-]^^X Eauthor_id = data['author_id'] ^\ Replaceck     ^U Paste         ^J Justify       ^/ Go To Line    M-E Redo         M-6 Copy         ^Q Where Was     M-W Next                                                                                                                      ^
     cursor = mysql.connection.cursor()
     cursor.execute("INSERT INTO blog_posts (title, content, author_id) VALUES (%s, %s, %s)",
                    (title, content, author_id))
@@ -105,7 +100,6 @@ def delete_blog_post(blog_id):
     else:
         return jsonify({"error": "Blog post not found"}), 404
 
-
 @app.route('/api/blog/<int:blog_id>', methods=['PATCH'])
 def update_blog_post(blog_id):
     if not is_authorized(request.headers.get('Authorization')):
@@ -133,4 +127,4 @@ def page_not_found(e):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0')
